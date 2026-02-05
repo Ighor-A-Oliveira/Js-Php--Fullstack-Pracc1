@@ -13,9 +13,9 @@ O projeto foi criado para **praticar a integração entre frontend e backend**, 
 
 ## 🧩 Estrutura do Projeto
 
-/frontend -> HTML, CSS e JS
-/backend -> Scripts PHP para manipulação do banco
-/database.sql -> Estrutura da base de dados MariaDB
+- /frontend -> HTML, CSS e JS
+- /backend -> Scripts PHP para manipulação do banco
+- /database.sql -> Estrutura da base de dados MariaDB
 
 
 ## 🛠️ Tecnologias Utilizadas
