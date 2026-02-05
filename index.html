@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form class="form">
+        <input type="text" name="username" placeholder="Username" >
+        <input type="password" name="pwd" placeholder="Password" >
+        <input type="text" name="email" placeholder="Email" >
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const formEl = document.querySelector('.form');
+        formEl.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+
+            console.log("Form submetido! Iniciando fetch..."); 
+
+            //preping data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData)
+            
+            //just a log
+            console.log("Dados do form:", Object.fromEntries(formData));  // ← pra ver o que está enviando
+            
+            //sending data to backend
+            fetch('includes/formhandler.inc.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => {
+                //if we successed then show message and clear form
+                if(data.trim() === "success") {
+                    alert("Inscrição realizada com sucesso!");
+                    formEl.reset();
+                } else {
+                    //else show error
+                    alert("Erro: " + data);
+                }
+            })
+            .catch(err => console.error('Erro no fetch:', err));
+        });
+    </script>
+    
+</body>
+</html>
+
+
+

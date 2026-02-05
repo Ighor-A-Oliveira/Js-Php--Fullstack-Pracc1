@@ -1,0 +1,109 @@
+# =====================================
+#              .gitignore
+#   HTML + CSS + PHP + JS + JSON + MariaDB
+#   (projetos com XAMPP, localhost, etc.)
+# =====================================
+
+# Pastas de build / compilação / output
+/dist/
+/build/
+/public/build/
+/vendor/               # Composer - dependências PHP
+/node_modules/         # npm / yarn / pnpm
+/.sass-cache/          # Cache do Sass (se usar SCSS)
+/.cache/               # Cache geral de ferramentas
+
+# Arquivos gerados automaticamente
+*.log
+*.logs
+error_log
+access_log
+php_error.log
+*.bak
+*.backup
+*.tmp
+*.temp
+*.swp
+*~
+
+# Banco de dados MariaDB / MySQL (NUNCA versionar dados reais!)
+/db/
+/database/
+/sql/
+/backup/
+/dump.sql
+*.sql
+*.sql.gz
+*.sql.zip
+/data/
+/mariadb/
+/mysql/data/
+/xampp/mysql/data/
+/phpmyadmin/config.inc.php
+
+# Arquivos de configuração sensíveis
+.env
+.env.local
+.env.*.local
+config/database.php     # ou config.php com credenciais
+config/config.php
+config/db.php
+.htaccess               # se tiver senhas ou chaves
+config.ini
+settings.php
+
+# Arquivos de ambiente e segredos
+/.env
+/.env.example          # ← Mantenha este se quiser versionar o modelo
+/.envrc
+/.direnv
+
+# Dependências PHP (Composer)
+composer.lock          # (opcional: versionar se for projeto compartilhado, senão ignore)
+vendor/
+
+# Dependências JS (se usar npm/yarn)
+package-lock.json      # (ignore se usar yarn, descomente se usar npm)
+yarn.lock              # (ignore se usar npm, descomente se usar yarn)
+pnpm-lock.yaml
+/bun.lockb
+
+# Arquivos de editor e sistema operacional
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs e cache do PHP / servidor
+/xampp/logs/
+/xampp/apache/logs/
+/xampp/php/logs/
+/php_errors.log
+/xdebug.log
+coverage/
+
+# Arquivos gerados por ferramentas
+/.phpunit.result.cache
+/.phpunit.cache/
+/.php_cs.cache
+/.stylelintrc_cache/
+/.eslintcache
+/.prettiercache
+
+# Projetos com SCSS (se você compilar para CSS)
+*.css.map
+/.sass-cache/
+
+# Outros comuns em projetos PHP + front-end
+/install/
+/setup/
+/migration/
+/phpunit.xml
+/phpunit.xml.dist
+/web-server.log
+/server.pid
